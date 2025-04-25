@@ -100,3 +100,38 @@ Because the third party is likely to be internally built by the worker tool, in 
 ## LICENSE
 
 [MIT](LICENSE)
+
+## PES采样器
+
+我们提供了一个PES采样器工具，可以用于分析和导出TS文件中的PES包数据。
+
+### 主要功能
+- 加载TS文件并解析PES包
+- 显示PES包的统计信息
+- 过滤特定类型或PID的PES包
+- 查看PES包的详细信息，包括PTS/DTS时间戳和原始数据
+- 导出单个PES包的原始数据
+- 批量导出特定类型的PES包
+- 导出PES统计报告
+
+### 使用方法
+1. 打开 `doc/examples/pes-sample.html` 文件
+2. 选择一个TS文件进行分析
+3. 使用过滤功能查找特定类型的PES包
+4. 点击PES条目查看详细信息
+5. 使用导出功能保存数据
+
+示例PES采样器支持解析以下流类型：
+- H.264视频 (stream_type=27)
+- HEVC视频 (stream_type=36)
+- AAC音频 (stream_type=15)
+- MP3音频 (stream_type=17)
+- 其他流类型
+
+### PES包结构
+PES (Packetized Elementary Stream) 包是MPEG-TS传输流中的基本数据单元，包含以下信息：
+- PTS (Presentation Time Stamp): 显示时间戳
+- DTS (Decoding Time Stamp): 解码时间戳
+- 实际音视频数据
+
+详细信息可参考ISO/IEC 13818-1标准。
