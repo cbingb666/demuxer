@@ -1,77 +1,77 @@
 {
-  "name": "demuxer",
-  "version": "2.3.0",
-  "description": "A utility for transmux ts/mp4/flv",
-  "main": "dist/demuxer.all.cjs.js",
-  "module": "dist/demuxer.all.esm.js",
-  "types": "dist/types/index.d.ts",
-  "directories": {
-    "doc": "doc",
-    "test": "test"
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "dev": "rollup -c ./rollup.config.js -w -m --environment BUILD_MODE:dev",
-    "production": "rollup -c ./rollup.config.js --environment BUILD_MODE:production",
-    "release": "npm run lint & npm run production & npm publish",
-    "lint": "eslint --ext js,ts src",
-    "test": "karma start",
-    "doc": "jsdoc ./src/ -c doc/jsdoc.json"
-  },
-  "author": "gems.xu@gmail.com",
-  "license": "MIT",
-  "devDependencies": {
-    "@commitlint/cli": "^7.4.0",
-    "@commitlint/config-conventional": "^7.3.1",
-    "@types/jasmine": "^3.5.10",
-    "@types/node": "^13.13.4",
-    "@typescript-eslint/eslint-plugin": "^2.30.0",
-    "@typescript-eslint/parser": "^2.30.0",
-    "commitizen": "^3.0.5",
-    "eslint": "^6.1.0",
-    "git-cz": "^3.2.1",
-    "husky": "^1.3.1",
-    "jasmine-core": "^3.4.0",
-    "jsdoc": "^3.5.5",
-    "karma": "^6.3.20",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-firefox-launcher": "^2.1.2",
-    "karma-jasmine": "^5.0.1",
-    "karma-rollup": "^1.0.1",
-    "karma-safari-launcher": "^1.0.0",
-    "karma-typescript": "^5.5.3",
-    "karma-webpack": "^5.0.0",
-    "lint-staged": "^8.1.4",
-    "prettier": "2.0.5",
-    "rollup": "^2.8.2",
-    "rollup-plugin-livereload": "^1.3.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "ts-loader": "^9.3.0",
-    "typescript": "^4.7.3"
-  },
-  "config": {
-    "commitizen": {
-      "path": "git-cz"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/goldvideo/demuxer.git"
-  },
-  "keywords": [
-    "demux",
-    "typescript",
-    "streaming data",
-    "mpegts",
-    "ts",
-    "mp4",
-    "flv"
-  ],
-  "bugs": {
-    "url": "https://github.com/goldvideo/demuxer/issues"
-  },
-  "homepage": "https://github.com/goldvideo/demuxer#readme",
-  "sideEffects": false
+    "name": "@cbingbing/demuxer",
+    "version": "2.3.0",
+    "description": "A utility for transmux ts/mp4/flv",
+    "main": "dist/demuxer.all.cjs.js",
+    "module": "dist/demuxer.all.esm.js",
+    "types": "dist/types/index.d.ts",
+    "directories": {
+        "doc": "doc",
+        "test": "test"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "rollup -c ./rollup.config.js -w -m --environment BUILD_MODE:dev",
+        "production": "rollup -c ./rollup.config.js --environment BUILD_MODE:production",
+        "release": "npm run lint & npm run production & npm publish",
+        "lint": "eslint --ext js,ts src",
+        "test": "karma start",
+        "doc": "jsdoc ./src/ -c doc/jsdoc.json"
+    },
+    "author": "gems.xu@gmail.com",
+    "license": "MIT",
+    "devDependencies": {
+        "@commitlint/cli": "^7.4.0",
+        "@commitlint/config-conventional": "^7.3.1",
+        "@types/jasmine": "^3.5.10",
+        "@types/node": "^13.13.4",
+        "@typescript-eslint/eslint-plugin": "^2.30.0",
+        "@typescript-eslint/parser": "^2.30.0",
+        "commitizen": "^3.0.5",
+        "eslint": "^6.1.0",
+        "git-cz": "^3.2.1",
+        "husky": "^1.3.1",
+        "jasmine-core": "^3.4.0",
+        "jsdoc": "^3.5.5",
+        "karma": "^6.3.20",
+        "karma-chrome-launcher": "^3.1.1",
+        "karma-firefox-launcher": "^2.1.2",
+        "karma-jasmine": "^5.0.1",
+        "karma-rollup": "^1.0.1",
+        "karma-safari-launcher": "^1.0.0",
+        "karma-typescript": "^5.5.3",
+        "karma-webpack": "^5.0.0",
+        "lint-staged": "^8.1.4",
+        "prettier": "2.0.5",
+        "rollup": "^2.8.2",
+        "rollup-plugin-livereload": "^1.3.0",
+        "rollup-plugin-typescript2": "^0.27.1",
+        "ts-loader": "^9.3.0",
+        "typescript": "^4.7.3"
+    },
+    "config": {
+        "commitizen": {
+            "path": "git-cz"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/goldvideo/demuxer.git"
+    },
+    "keywords": [
+        "demux",
+        "typescript",
+        "streaming data",
+        "mpegts",
+        "ts",
+        "mp4",
+        "flv"
+    ],
+    "bugs": {
+        "url": "https://github.com/goldvideo/demuxer/issues"
+    },
+    "homepage": "https://github.com/goldvideo/demuxer#readme",
+    "sideEffects": false
 }
