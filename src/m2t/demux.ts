@@ -22,10 +22,10 @@ const CHUNK_BYTE_LENGTH = 188; // Transport Stream chunks shall be 188 bytes lon
 type InterfaceStream = M2TSComplexStream | ElementaryStream;
 
 export class TSDemux extends DemuxFacade {
-    private psi_: PSI;
-    private pesStream_: PesStream;
-    private elementaryStream_: ElementaryStream;
-    private complexStream_: M2TSComplexStream;
+    public psi_: PSI;
+    public pesStream_: PesStream;
+    public elementaryStream_: ElementaryStream;
+    public complexStream_: M2TSComplexStream;
 
     constructor(options: GlobalOptions = {}) {
         super(options);

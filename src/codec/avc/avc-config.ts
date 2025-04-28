@@ -11,7 +11,7 @@ import { SPSProps } from './sps';
  * AVC Config Helper
  * Accord sps/pps, generate mimeType info.
  */
-export default (sps: SPSProps /*, pps?: PPSProps*/) => {
+export default function getAVCConfig(sps: SPSProps /*, pps?: PPSProps*/) {
     let profile_idc = sps.profile_idc;
     let profile_compatibility = sps.profile_compatibility;
     let level_idc = sps.level_idc;

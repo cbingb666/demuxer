@@ -5,7 +5,7 @@
  */
 
 import DataViewReader from '../../util/dv';
-import NaluTypes from '../../enum/nalu-types';
+import { NaluTypes } from '../../enum/nalu-types';
 import discardEP3B from './ep3b';
 import { decodeSPS, SPSProps } from './sps';
 import { decodePPS, PPSProps } from './pps';

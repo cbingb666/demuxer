@@ -24,10 +24,10 @@ class ElementaryStream extends Stream {
     private context: Context;
     private PSI: PSI;
     private options: GlobalOptions;
-    private tracks: Array<GOPVector>;
-    private adtsStream: ADTSStream;
-    private avcStream: AVCStream;
-    private streams: [ADTSStream, AVCStream];
+    public tracks: Array<GOPVector>;
+    public adtsStream: ADTSStream;
+    public avcStream: AVCStream;
+    public streams: [ADTSStream, AVCStream];
 
     constructor(ctx: Context, psi: PSI, options: GlobalOptions = {}) {
         super();
@@ -41,6 +41,7 @@ class ElementaryStream extends Stream {
         this.streams = [this.adtsStream, this.avcStream];
 
         if (options.decodeCodec) {
+
             this.avcStream.on('data', (data: GOPVector) => {
                 let stubTime = options.config.stubTime;
 

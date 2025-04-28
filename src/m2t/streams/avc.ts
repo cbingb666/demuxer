@@ -10,7 +10,7 @@
 import { AVCCodec, AVCCodecData } from '../../codec/avc';
 import getAVCConfig from '../../codec/avc/avc-config';
 import NALU from '../../codec/avc/nalu';
-import NaluTypes from '../../enum/nalu-types';
+import { NaluTypes } from '../../enum/nalu-types';
 import { StreamTypes } from '../../enum/stream-types';
 import logger from '../../util/logger';
 import Stream from '../../util/stream';
@@ -22,7 +22,7 @@ class H264Stream extends Stream {
     private trackId?: number;
     private currentFrame: AVCFrame;
     private prevFrame: AVCFrame;
-    private codec: AVCCodec;
+    public codec: AVCCodec;
     private gop: GOP;
     private gops: GOPVector;
 
@@ -60,6 +60,7 @@ class H264Stream extends Stream {
                 track.pps = [nalu.rawData];
             }
 
+            this.emit('nalu', nalu)
             this._grouping(nalu);
         });
     }
@@ -90,7 +91,6 @@ class H264Stream extends Stream {
             if (this.prevFrame && (!this.currentFrame.duration || this.currentFrame.duration <= 0)) {
                 this.currentFrame.duration = this.prevFrame.duration || 0;
             }
-
             this._pushFrameIntoGop();
             this.currentFrame = [];
         }
@@ -116,6 +116,7 @@ class H264Stream extends Stream {
      */
     _grouping(currentNal) {
         if (currentNal.unit_type === NaluTypes.AUD) {
+
             if (this.currentFrame.length > 0) {
                 this.currentFrame.duration = currentNal.dts - this.currentFrame.dts;
 
@@ -133,6 +134,8 @@ class H264Stream extends Stream {
                     logger.warn(`h264 codec drop frame`);
                 }
             }
+
+            this.emit('frame', this.currentFrame)
 
             this.prevFrame = this.currentFrame;
 

@@ -24,7 +24,7 @@
 // 24..31           Unspecified
 */
 
-const enum NaluTypes {
+export const enum NaluTypes {
     NON_IDR_SLICE = 0x01,
     DPA_SLICE = 0x02,
     DPB_SLICE = 0x03,
